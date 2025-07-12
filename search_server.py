@@ -76,9 +76,10 @@ async def search(request: Request, query: Query):
         return {"error": "No results found."}
 
     answer = (
-        f"أنا مش مختص، بس لقيت ليك معلومة من {source}:\n"
-        f"**{result['title']}**\n"
-        f"{result['snippet']}\n"
-        f"المصدر: {result['link']}"
+    f"أنا مش مختص، لكن لقيت ليك معلومة من {source}:\n\n"
+    f"📌 **{result['title']}**\n"
+    f"{result['snippet']}\n\n"
+    f"🔗 [اقرأ المصدر]({result['link']})"
     )
+
     return {"answer": answer}
